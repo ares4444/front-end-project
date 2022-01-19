@@ -2,8 +2,8 @@ import {key} from "./keys.js";
 
 const inputBox = document.getElementById("input");
 const searchButton = document.getElementById("button");
-//const audioObj = new Audio('https://api.deezer.com/album/258065882/tracks');
-//document.getElementById("results").appendChild(audioObj);
+const audioObj = new Audio('https://api.deezer.com/album/258065882/tracks');
+document.getElementById("results").appendChild(audioObj);
 searchButton.addEventListener("click", (e) => {
     e.preventDefault();
     let musicSearch = inputBox.value;
@@ -18,23 +18,22 @@ searchButton.addEventListener("click", (e) => {
 	}
 })
 .then((response) => response.json())
-//  .then(responseData => {
-//  	showResults(responseData.Search)})
-.then(response => {
-	console.log(response);
-})
+//  .then(data => {
+//  	showResults(data.Search)})
+
 .catch((error) => {
     console.log('Error:', error)
 })
-});
 
-function showResults(results) {
-    console.log(results)
-    results.forEach(result => {
+.then(data => {
+	console.log(data);
+    const dataResults = data.Search;
+dataResults.forEach(results => {
+    console.dir(results)
       let item = document.createElement("div");
       item.innerHTML = `<div class="card">
-      <audio controls src="${result.preview}"></audio>`;
-      document.getElementById("card-group").appendChild(item);
+      <audio controls src="${results.preview}" type="module"></audio></div>`;
+    //   document.getElementById("card-group").appendChild(item);
     });
-    
-   };
+   })
+});
