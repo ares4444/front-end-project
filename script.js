@@ -1,37 +1,42 @@
-// const musicBox = document.getElementById("music-box");
-// const musicBox = document.createElement("musicBox");
-// const input = document.getElementsById("input");
+const inputBox = document.getElementById("input");
+const searchButton = document.getElementById("button");
+//const audioObj = new Audio('https://api.deezer.com/album/258065882/tracks');
 
-fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${input}`, {
+//document.getElementById("results").appendChild(audioObj);
+searchButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    let musicSearch = inputBox.value;
+    console.log(musicSearch);
+
+    fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		"x-rapidapi-key": "df9785e730msh0922b9a2e2168d3p19afc2jsn59ef3161dabf"
+		"x-rapidapi-key": "9eefd7690cmshfb8082bc7933f3fp1b0bf0jsn1ab32885f523"
 	}
 })
+.then((response) => response.json())
+//  .then(responseData => {
+//  	showResults(responseData.Search)})
 .then(response => {
 	console.log(response);
 })
-.catch(err => {
-	console.error(err);
+.catch((error) => {
+    console.log('Error:', error)
+})
 });
 
-// musicBox.addEventListener("click" (playback => {
-//     let playAudio = musicBox.play();
-//     let pauseAudio = musicBox.pause();
-// }));
-
-fetch("https://genius.p.rapidapi.com/search?q=Kendrick%20Lamar", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "genius.p.rapidapi.com",
-		"x-rapidapi-key": "df9785e730msh0922b9a2e2168d3p19afc2jsn59ef3161dabf"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
-
+function showResults(results) {
+    console.log(results)
+    results.forEach(result => {
+      let item = document.createElement("div");
+      item.innerHTML = `<div class="card">
+      <audio src="${result.preview}">
+      <h1>Audio Stuff</h1>
+    </div>
+    </div>
+    <br>` ;
+      document.getElementById("card-group").appendChild(item);
+    });
+    
+   };
