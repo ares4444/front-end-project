@@ -1,7 +1,7 @@
 import {key} from "./keys.js";
 
-const inputBox = document.getElementById("input");
-const searchButton = document.getElementById("button");
+const inputBox = document.getElementById("search-input");
+const searchButton = document.getElementById("submit-btn");
 //const audioObj = new Audio('https://api.deezer.com/album/258065882/tracks');
 //document.getElementById("results").appendChild(audioObj);
 searchButton.addEventListener("click", (e) => {
@@ -14,12 +14,12 @@ searchButton.addEventListener("click", (e) => {
 	"headers": {
 		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
 		"x-rapidapi-key": 
-        `${key}`
+    `${key}`
 	}
 })
 .then((response) => response.json())
-//  .then(responseData => {
-//  	showResults(responseData.Search)})
+ .then(responseData => {
+  	showResults(responseData.Search)})
 .then(response => {
 	console.log(response);
 })
@@ -28,17 +28,31 @@ searchButton.addEventListener("click", (e) => {
 })
 });
 
-function showResults(results) {
+// function showResults(results) {
+//     console.log(results)
+//     results.forEach(result => {
+//       let item = document.createElement("div");
+//       item.innerHTML = `<div class="card">
+//       <audio src="${result.preview}">
+//     </div>
+//     <br>` ;
+//       document.getElementById("result-div").appendChild(item);
+//     });
+    
+//    };
+
+   function showResults(results) {
     console.log(results)
     results.forEach(result => {
       let item = document.createElement("div");
       item.innerHTML = `<div class="card">
-      <audio src="${result.preview}">
-      <h1>Audio Stuff</h1>
-    </div>
+      <audio src="${result.preview}"></audio>
+      <div class="card-body">
+
+      </div>
     </div>
     <br>` ;
-      document.getElementById("card-group").appendChild(item);
+      document.getElementById("results").appendChild(item);
     });
     
    };
