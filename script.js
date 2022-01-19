@@ -1,7 +1,8 @@
+import {key} from "./keys.js";
+
 const inputBox = document.getElementById("input");
 const searchButton = document.getElementById("button");
 //const audioObj = new Audio('https://api.deezer.com/album/258065882/tracks');
-
 //document.getElementById("results").appendChild(audioObj);
 searchButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -12,7 +13,8 @@ searchButton.addEventListener("click", (e) => {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		"x-rapidapi-key": "9eefd7690cmshfb8082bc7933f3fp1b0bf0jsn1ab32885f523"
+		"x-rapidapi-key": 
+        `${key}`
 	}
 })
 .then((response) => response.json())
