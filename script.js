@@ -33,11 +33,7 @@ function showResults(results) {
     results.forEach(result => {
       let item = document.createElement("div");
       item.innerHTML = `<div class="card">
-      <audio src="${result.preview}">
-      <h1>Audio Stuff</h1>
-    </div>
-    </div>
-    <br>` ;
+      <audio controls src="${result.preview}"></audio>`;
       document.getElementById("card-group").appendChild(item);
     });
     
