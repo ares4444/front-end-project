@@ -10,6 +10,6 @@ searchButton.addEventListener("click", (e) => {
     console.log(musicSearch);
 
     localStorage.setItem("artist", musicSearch)
-    window.location.replace("http://127.0.0.1:5500/songspage.html");
+    window.location.replace("http://127.0.0.1:5500/songs.html");
 
 });
