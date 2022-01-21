@@ -1,16 +1,49 @@
 body {
     background-image: url("./image/head02.png");
     background-position: right bottom;
-    background-size: 750px 620px;
+    background-size: 500px 420px;
     background-attachment: fixed;
     min-height: 100vh;
     background-repeat: no-repeat;
     /* display: grid; */
     /* justify-items: center; */
     place-content: center;
+    font-family: 'Open Sans', sans-serif;
     
 }
 
+
+.jumbotron{
+    margin:0px 0px 0px 0px;
+      background: 
+  linear-gradient(
+    rgba(0, 0, 250, 0.25), 
+    rgba(125, 250, 250, 0.45)
+  ),
+  url(images/contactpagebg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:white !important;
+  height:200px;
+  }
+
+  .display-2 {
+      font-size: 50px;
+      text-align: center;
+  }
+
+  .lead {
+      font-size: 25px;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+  }
+
+  p {
+      color:rgb(12, 11, 11);
+      font-size: 15px;
+      margin: 0;
+      text-align: center;
+  }
 
 .slider {
     height: 250px;
@@ -131,6 +164,15 @@ img:hover {
     left: 16px;
     font-size: 20px;
     color: white;
-    text-shadow: 2px 2px 4px #f3f70b9d;
-    background-color: rgba(27, 27, 25, 0.562);
+    background-color: rgba(27, 88, 156, 0.562);
+  }
+
+  footer {
+    text-align: center;
+    padding: 1px;
+    background-color: #04243b;
+  }
+
+  .footer p {
+      color: white;
   }
