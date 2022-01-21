@@ -8,139 +8,185 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
-    <title>MusicCraft</title>
+    <title>MusiclCrafts</title>
 
 </head>
 <body>
-    <!-- NO 01 SH NAVBAR -->
-<div class="navbar navbar-expand-md  bg-gradient py-5">
-    <div class="container">
-        <a href="#" class="navbar-brand"><img src="logo.png" alt="Avatar"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#mainmenu">
-    <span class="navbar-toggler-icon text-primary">Menu</span>
-    </button>
-
-        <div class="collapse navbar-collapse" id="mainmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="songspage.html" class="nav-link">Songs</a></li>
-                <li class="nav-item"><a href="contactpage.html" class="nav-link">Contact</a></li>
-            </ul>
+<!-- <NO.1 NAVBAR  -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #04243b;">
+        <div class="container">
+        <a class="navbar-brand" href="#"><img src="images/logowhite.png" width="300" height="46"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav class="nav nav-pills flex-column flex-sm-row">
+            <a class="flex-sm-fill text-sm-center nav-link active" href="index.html">Home</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="about.html">About</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="songs.html">Songs</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="contactpage.html">Contact</a>
         </div>
-    </div>
-</div>
-<!-- 
-<div id="middletext">
-    <h3>Search it with Musical Crafts</h3>
-</div> -->
+        </nav>
+    </nav>
+
+    <!-- Contact page header -->
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-2">Welcome to the Musical Crafts</h1>
+        </div>
+      </div> 
+      <br/>
+
+<p class="lead">Your Music Anytime, Everywhere</p>
+<p>Go to MusicalCrafts.com on your smartphone or tablet to checkout brand new features</p>
+        <br>
 
 <!-- NO 03 SH search button... -->
 <div id="search-btn" class="search">
-<input id="input" type="text" placeholder="Search.." class="active-cyan-4 mb-4">
+<input type="text" placeholder="Search for Music" class="active-cyan-4 mb-4">
 <button  class="btn btn-warning btn-lg" type="submit">Search</button>
 </div>
-<br/>
-<br/>
-    <!-- NO 04 SH images -->
-<div class="slider">
+
+    <!-- NO 04 SH images slider -->
+<div class="slider" id="slidercontrol">
     
     <div class="slide-track">
         
         <div class="slide">
-            <img src="01.jpg" height="200" width="250" alt=""/>
-            <div class="bottomleft">POP SONGS</div>
+          <img src="01.jpg" height="200" width="250" alt="" />
+          <div class="bottomleft">POP SONGS</div>
         </div>
 
-        <div class="slide">
-            <img src="02.jpg" height="200" width="250" alt=""/>
-            <div class="bottomleft">COUNTRY</div>
-        </div>
+            <div class="slide">
+                <img src="02.jpg" height="200" width="250" alt=""/>
+                <div class="bottomleft">Country Songs</div>
+            </div>
             
-        <div class="slide">
-            <img src="03.jpg" height="200" width="250" alt=""/>
-            <div class="bottomleft">Hip-Hop</div>
-        </div>
+                <div class="slide">
+                    <img src="03.jpg" height="200" width="250" alt=""/>
+                <div class="bottomleft">Hip-Hop Songs</div>
+                </div>
                 
-        <div class="slide">
-            <img src="04.jpg" height="200" width="250" alt=""/>
-            <div class="bottomleft">Latin</div>
-        </div>
+                    <div class="slide">
+                        <img src="04.jpg" height="200" width="250" alt=""/>
+                        <div class="bottomleft">Latin Songs</div>
+                    </div>
                     
-        <div class="slide">
-            <img src="05.jpg" height="200" width="250" alt=""/>
-            <div class="bottomleft"> K-Pop</div>                
-        </div>      
+                        <div class="slide">
+                            <img src="05.jpg" height="200" width="250" alt=""/>
+                            <div class="bottomleft"> K-Pop Songs</div>
+
+                        </div>
                         
-        <div class="slide">
-            <img src="01.jpg" height="200" width="250" alt=""/>
-            <div class="bottomleft"></div>
-        </div>
+                            <div class="slide">
+                                <img src="01.jpg" height="200" width="250" alt=""/>
+                                <div class="bottomleft">Pop Songs</div>
+                                
 
-        <div class="slide">
-            <img src="02.jpg" height="200" width="250" alt=""/>
-            <div class="bottomleft"></div>
-        </div>
+                            </div>
+                                <div class="slide">
+                                    <img src="02.jpg" height="200" width="250" alt=""/>
+                                    <div class="bottomleft">Country Songs</div>
 
-        <div class="slide">
-            <img src="03.jpg" height="200" width="250"alt=""/>
-            <div class="bottomleft"></div>
-        </div>
-
-        <div class="slide">
-            <img src="04.jpg" height="200" width="250"alt=""/>
-            <div class="bottomleft"></div>
-        </div>        
+                                </div>
+                                    <div class="slide">
+                                        <img src="03.jpg" height="200" width="250"alt=""/>
+                                        <div class="bottomleft">Hip-Hop Songs</div>
+                                    </div>
+                                        <div class="slide">
+                                            <img src="04.jpg" height="200" width="250"alt=""/>
+                                            <div class="bottomleft">Latin Songs</div>
+                                        </div>
  
 
-                                        <!-- imgs for slide (doubled) -->
-
         <div class="slide">
-            <img src="01.jpg" height="200" width="250"alt=""/>
-            <div class="bottomleft">POP SONGS</div>
+          <img src="01.jpg" height="200" width="250" alt="" />
+          <div class="bottomleft"></div>
+          <div class="bottomleft">Pop Songs</div>
+
+        </div>
+        <div class="slide">
+          <img src="02.jpg" height="200" width="250" alt="" />
+          <div class="bottomleft"></div>
+          <div class="bottomleft">Country Songs</div>
+
+        </div>
+        <div class="slide">
+          <img src="03.jpg" height="200" width="250" alt="" />
+          <div class="bottomleft"></div>
+          <div class="bottomleft">Hip-Hop Songs</div>
+
+        </div>
+        <div class="slide">
+          <img src="04.jpg" height="200" width="250" alt="" />
+          <div class="bottomleft"></div>
+          <div class="bottomleft">Latin Songs</div>
+
         </div>
 
-        <div class="slide">
-            <img src="02.jpg" height="200" width="250"alt=""/>
-        </div>
+                                        <div class="slide">
+                                            <img src="01.jpg" height="200" width="250"alt=""/>
+                                            <div class="bottomleft">Pop Songs</div>
+                                        </div>
+                                            <div class="slide">
+                                                <img src="02.jpg" height="200" width="250"alt=""/>
+                                                <div class="bottomleft">Country Songs</div>
 
-        <div class="slide">
-            <img src="03.jpg" height="200" width="250"alt=""/>
-        </div>
+                                            </div>
+                                                <div class="slide">
+                                                    <img src="03.jpg" height="200" width="250"alt=""/>
+                                                    <div class="bottomleft">Hip-Hop Songs</div>
 
-        <div class="slide">
-            <img src="04.jpg"  height="200" width="250"alt=""/>
-        </div>
+                                                </div>
+                                                    <div class="slide">
+                                                        <img src="04.jpg"  height="200" width="250"alt=""/>
+                                                        <div class="bottomleft">Latin Songs</div>
 
-        <div class="slide">
-            <img src="05.jpg"  height="200" width="250" alt=""/>
-        </div>
+                                                    </div>
+                                                        <div class="slide">
+                                                            <img src="05.jpg"  height="200" width="250" alt=""/>
+                                                            <div class="bottomleft"> K-Pop Songs</div>
 
-        <div class="slide">
-            <img src="01.jpg" height="200" width="250"  alt=""/>
-        </div>
+                                                        </div>
+                                                            <div class="slide">
+                                                                <img src="01.jpg" height="200" width="250"  alt=""/>
+                                                                <div class="bottomleft">Pop Songs</div>
 
-        <div class="slide">
-            <img src="02.jpg" height="200" width="250" alt=""/>
-        </div>
+                                                                </div>
+                                                                <div class="slide">
+                                                                    <img src="02.jpg" height="200" width="250" alt=""/>
+                                                                    <div class="bottomleft">Country Songs</div>
 
-        <div class="slide">
-            <img src="03.jpg" height="200" width="250" alt=""/>
-        </div>
+                                                                    </div>
+                                                                    <div class="slide">
+                                                                        <img src="03.jpg" height="200" width="250" alt=""/>
+                                                                        <div class="bottomleft">Hip-Hop Songs</div>
 
-        <div class="slide">
-            <img src="04.jpg" height="200" width="250"alt=""/>
-        </div>
+                                                                        </div>
+
+                                                                        <div class="slide">
+                                                                            <img src="04.jpg" height="200" width="250"alt=""/>
+                                                                            <div class="bottomleft">Latin Songs</div>
+
+                                                                        </div>
                                                    
     </div>
-</div> 
+ </div>
 <br/>
-<div class="Btn">
+<!-- <div class="Btn">
     <button class="btn btn-warning">Prev</button>
     <button class="btn btn-warning">Next</button>
-</div>
+</div> -->
+
+<br><br><br><br>
+
+<footer class="footer">
+    <p>Frontend Project 2022<br>
+        <a href="mailto:hege@example.com">christopher@musicalcrafts.com || moises@musicalcrafts.com || shayma@musicalcrafts.com || jeffrey@musicalcrafts.com</a><br>
+    </p>
+</footer>
+
 
     <script src="script.js" type="module"></script>
-</body>
+  </body>
 </html>
