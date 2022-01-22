@@ -1,8 +1,19 @@
 import {key} from "./keys.js";
-console.log(key);
-console.log("hello");
+import {fetchData} from "./fetchData.js";
+const results = document.getElementById("results");
+// import {cube} from "/scripts/cube.js";
 
-console.log(localStorage.getItem("artist"));
+//this is a way to make a dynamic module import
+//instead of importing the function, you import the file. then create a ".then" call to that function and return the value needed
+// import("/scripts/fetchData.js").then(({fetchData}) => {
+	// return fetchData;
+// });
+
+// fetchData(musicSearch).then(result => console.dir(result))
+// console.log(cube(5));
+// console.log("hello");
+
+// console.log(localStorage.getItem("artist"));
 
 const musicSearch = localStorage.getItem("artist");
 console.log(musicSearch);
@@ -24,10 +35,17 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
     console.log('Error:', error)
 })
 
-.then(data => {
+.then(fetchResults => {
     console.dir()
-	console.log(data);
-    const dataResults = data.Search;
+	console.log(fetchResults.data);
+    const {data} = fetchResults;
+	data.map(song => {
+		let songCard = `
+		<div>${song.title}</div>
+		<audio controls src="${song.preview}"></audio>`
+		results.innerHTML += songCard;
+
+	})
 // dataResults.forEach(results => {
 //     console.dir(results)
 //       let item = document.createElement("div");

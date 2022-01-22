@@ -1,4 +1,3 @@
-
 const inputBox = document.getElementById("input");
 const searchButton = document.getElementById("search-btn");
 
@@ -10,6 +9,6 @@ searchButton.addEventListener("click", (e) => {
     console.log(musicSearch);
 
     localStorage.setItem("artist", musicSearch)
-    window.location.replace("http://127.0.0.1:5500/songs.html");
+    window.location.replace("http://127.0.0.1:5501/songs.html");
 
 });
