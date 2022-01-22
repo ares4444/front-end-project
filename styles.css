@@ -6,3 +6,7 @@ body {
     margin: 90px;
     text-align:center;
 }
+
+#card-group {
+    align-content: center;
+}
