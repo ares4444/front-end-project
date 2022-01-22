@@ -7,7 +7,8 @@ const musicSearch = localStorage.getItem("artist");
 console.log(musicSearch);
 // searchButton.addEventListener("click", (e) => {}
 
-fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
+window.addEventListener('DOMContentLoaded', async (event) => {
+	fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
   method: "GET",
   headers: {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -39,6 +40,31 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
   	</div>
 	</div>`;
       results.innerHTML += songCard;
-    });
-    
-  });
+    })
+    })
+
+	.then(
+		(await fetch(`https://genius.p.rapidapi.com/search?q=${musicSearch}`, {
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "genius.p.rapidapi.com",
+				"x-rapidapi-key": "df9785e730msh0922b9a2e2168d3p19afc2jsn59ef3161dabf"
+			}
+		})
+		.then(response => {
+			console.log(response)
+		})
+
+		.catch(err => {
+			console.error(err);
+		})
+		))
+    console.log('DOM fully loaded and parsed');
+});
+
+  
+
+  
+
+
+
