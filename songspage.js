@@ -1,11 +1,11 @@
 import { key } from "./keys.js";
 import { fetchData } from "./fetchData.js";
 const results = document.getElementById("results");
-
-
 const musicSearch = localStorage.getItem("artist");
 console.log(musicSearch);
-// searchButton.addEventListener("click", (e) => {}
+const artistSearch = localStorage.getItem("artist")
+
+
 
 window.addEventListener('DOMContentLoaded', async (event) => {
 	fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
@@ -16,55 +16,45 @@ window.addEventListener('DOMContentLoaded', async (event) => {
   },
 })
   .then((response) => response.json())
-  //  .then(data => {
-  //  	showResults(data.Search)})
-
   .catch((error) => {
     console.log("Error:", error);
   })
-
   .then((fetchResults) => {
     console.dir();
     console.log(fetchResults.data);
     const { data } = fetchResults;
     data.map((song) => {
-      let songCard = `<div id="music-container" class="music-container col-6 col-md-2 col-sm-1">
-      <div class="music-info">
-      </div>
-      <div class="card" style="width: 18rem;">
-  	<img class="card-img-top" src="${song.album.cover}" alt="Card image cap">
-  	<div class="card-body">
-	  <div>${song.title}</div>
-	  <br>
-	  <audio controls src="${song.preview}" id="audio" style="width: 100%"></audio>
-  	</div>
-	</div>`;
-      results.innerHTML += songCard;
+      let songCard = `<div id="music-container" class="music-container">
+      <div class="card deezerApi"  style="width: 18rem;">
+		<img class="card-img-top" src="${song.album.cover_medium}" alt="Card image cap">
+		<div class="card-body">
+      <div id="songTitle">${song.title}</div>
+      <br>
+      <audio controls src="${song.preview}" id="audio" style="width: 100%"></audio>
+    </div>
+    </div>
+		</div>`;
+      		results.innerHTML += songCard;
     })
     })
 
-	.then(
-		(await fetch(`https://genius.p.rapidapi.com/search?q=${musicSearch}`, {
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-host": "genius.p.rapidapi.com",
-				"x-rapidapi-key": "df9785e730msh0922b9a2e2168d3p19afc2jsn59ef3161dabf"
-			}
-		})
-		.then(response => {
-			console.log(response)
-		})
-
-		.catch(err => {
-			console.error(err);
-		})
-		))
-    console.log('DOM fully loaded and parsed');
-});
-
   
-
-  
-
-
-
+	  fetch(`https://api.lyrics.ovh/v1/${artistSearch}/${musicSearch}`)
+    .then(response => response.json())
+		.then(lyrics => {
+      console.log(lyrics);
+    })
+    .then((fetchLyrics) => {
+			console.log(fetchLyrics.data);
+			const {data} = fetchLyrics;
+			data.map((lyrics) => {
+				let lyricCard = `<div id="lyric-container" class="card">
+				<div class="lyric-info">
+				</div>
+				<p>${lyrics}</p>
+				</div>
+			  </div>`
+			  geniusApi.innerHTML += lyricCard;
+			})
+		})
+  })
