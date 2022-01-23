@@ -7,9 +7,8 @@ const artistSearch = localStorage.getItem("artist")
 
 
 
-
-// searchButton.addEventListener("click", (e) => {}
-fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
+window.addEventListener('DOMContentLoaded', async (event) => {
+	fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
   method: "GET",
   headers: {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -58,4 +57,4 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch}`, {
 			  geniusApi.innerHTML += lyricCard;
 			})
 		})
-      
+  })
