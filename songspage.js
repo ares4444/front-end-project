@@ -1,5 +1,5 @@
-import { key } from "./keys.js";
-import { fetchData } from "./fetchData.js";
+import { songsKey } from "./keys.js";
+// import { fetchData } from "./fetchData.js";
 const results = document.getElementById("results");
 const musicSearch = localStorage.getItem("artist");
 console.log(musicSearch);
@@ -12,9 +12,9 @@ window.addEventListener('DOMContentLoaded', async (event) => {
   method: "GET",
   headers: {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    "x-rapidapi-key": `${key}`,
-  },
-})
+    "x-rapidapi-key": `${songsKey}`,
+  	},
+	})
   .then((response) => response.json())
   .catch((error) => {
     console.log("Error:", error);
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
       		results.innerHTML += songCard;
     })
     })
-
+});
   
 	  fetch(`https://api.lyrics.ovh/v1/${artistSearch}/${musicSearch}`)
     .then(response => response.json())
