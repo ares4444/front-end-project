@@ -1,5 +1,5 @@
-import { key } from "./keys.js";
-import { fetchData } from "./fetchData.js";
+import { songsKey } from "./keys.js";
+// import { fetchData } from "./fetchData.js";
 const results = document.getElementById("results");
 
 
@@ -12,9 +12,9 @@ window.addEventListener('DOMContentLoaded', async (event) => {
   method: "GET",
   headers: {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    "x-rapidapi-key": `${key}`,
-  },
-})
+    "x-rapidapi-key": `${songsKey}`,
+  	},
+	})
   .then((response) => response.json())
   //  .then(data => {
   //  	showResults(data.Search)})
@@ -42,27 +42,10 @@ window.addEventListener('DOMContentLoaded', async (event) => {
       results.innerHTML += songCard;
     })
     })
-
-	.then(
-		(await fetch(`https://genius.p.rapidapi.com/search?q=${musicSearch}`, {
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-host": "genius.p.rapidapi.com",
-				"x-rapidapi-key": "df9785e730msh0922b9a2e2168d3p19afc2jsn59ef3161dabf"
-			}
-		})
-		.then(response => {
-			console.log(response)
-		})
-
-		.catch(err => {
-			console.error(err);
-		})
-		))
-    console.log('DOM fully loaded and parsed');
 });
 
-  
+
+
 
   
 
