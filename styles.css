@@ -1,12 +1,26 @@
-body {
-    background-color:lightblue ;
+.card-img-top {
+    border-radius: 20px;
 }
 
-#container {
-    margin: 90px;
-    text-align:center;
+.card {
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 4px darkgrey;
 }
 
-#card-group {
-    align-content: center;
+#results {
+   float: left;
+   width: 50%;
+   margin-left: 30px;
 }
+
+#songTitle {
+    text-align: center;
+}
+
+#geniusApi {
+    margin-right: 40px;
+}
+
+
+
