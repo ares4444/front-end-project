@@ -1,6 +1,10 @@
 import { songsKey } from "./keys.js";
 // import { fetchData } from "./fetchData.js";
 const results = document.getElementById("results");
+const lyricsDIV = document.getElementById("lyricsDIV");
+const artistName = document.getElementById("artistName");
+const songName = document.getElementById("songName");
+
 const musicSearch = localStorage.getItem("artist");
 console.log(musicSearch);
 const artistSearch = localStorage.getItem("artist")
@@ -39,22 +43,23 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     })
 });
   
-	  fetch(`https://api.lyrics.ovh/v1/${artistSearch}/${musicSearch}`)
-    .then(response => response.json())
-		.then(lyrics => {
-      console.log(lyrics);
-    })
-    .then((fetchLyrics) => {
+	  fetch(`https://private-amnesiac-3503f-lyricsovh.apiary-proxy.com/v1/flyleaf/im%20so%20sick`)
+    	.then(response => response.json())
+		.catch((error) => {
+		console.log("Error:", error);
+	 	 })
+		  .then(data => {
+      		console.log(data);
+    	})
+    	.then((fetchLyrics) => {
 			console.log(fetchLyrics.data);
 			const {data} = fetchLyrics;
 			data.map((lyrics) => {
-				let lyricCard = `<div id="lyric-container" class="card">
+				let lyricCard = `<div id="lyric-container" class="lyric-container">
 				<div class="lyric-info">
-				</div>
-				<p>${lyrics}</p>
+				<p>${lyrics.lyrics}</p>
 				</div>
 			  </div>`
-			  geniusApi.innerHTML += lyricCard;
+			  lyricsDIV.innerHTML += lyricCard;
 			})
 		})
-  })

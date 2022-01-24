@@ -1,4 +1,4 @@
-const inputBox = document.getElementById("input");
+const inputBox = document.getElementById("artistName");
 const searchButton = document.getElementById("search-btn");
 const artistBox = document.getElementById("artistName")
 
