@@ -11,49 +11,8 @@ console.log(musicSearch.artist);
 console.log(musicSearch.song);
 
 window.addEventListener('DOMContentLoaded', async (event) => {
-
-	//promise1 = 
-	const fetchSongs = fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch.artist}`, {
-		method: "GET",
-		headers: {
-		  "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		  "x-rapidapi-key": `${songsKey}`,
-			},
-		  }).then((response) => response.json())
-		  .then(songData => {
-			  console.log("fetch-songs", songData.data)
-			  songData.data.map(song => {
-				fetch(`https://private-amnesiac-3503f-lyricsovh.apiary-proxy.com/v1/${encodeURI(song.artist.name)}/${encodeURI(song.title)}`).then(response => response.json())
-				.catch((error) => {
-				console.log("Error:", error);
-				}).then(data => {
-					console.log("these are the lyric results", data.error)
-					  accordBody[j].innerHTML = info
-					  j++
-					})
-				})	
-			})
-
-			
-
-			//${ songLyrics.data != “” ? PRINT THE LYRICS : “Lyrics not found”}
-		
-
-	
-
-	
-	
-	//promise.all = 
-
-	Promise.all([fetchSongs]).then((values) => {
-		console.log("promise.all", values);
-	  });
-
-
-
-
 	let songResults = [];
-	fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch.artist}`, {
+	await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch.artist}`, {
   method: "GET",
   headers: {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -107,7 +66,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 	let j = 0;
 	songResults.map(async song => {
 		console.log("68", song);
-		fetch(`https://private-amnesiac-3503f-lyricsovh.apiary-proxy.com/v1/${song.artist.name}/${song.title}`,
+		await fetch(`https://private-amnesiac-3503f-lyricsovh.apiary-proxy.com/v1/${song.artist.name}/${song.title}`,
 		{headers: {
 			'Content-Type' : 'application/json',
 		},
