@@ -1,7 +1,7 @@
 import { songsKey } from "./keys.js";
 // import { fetchData } from "./fetchData.js";
 const results = document.getElementById("results");
-const lyricsDIV = document.getElementById("lyricsDIV");
+// const lyricsDIV = document.getElementById("lyricsDIV");
 const artistName = document.getElementById("artistName");
 const songName = document.getElementById("songName");
 let i = 0;
@@ -65,8 +65,8 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 				// render lyric html
 
 					
-					console.log(data.lyrics)
-					console.log("these are the lyric results", data)
+					//console.log(data.lyrics)
+					//console.log("these are the lyric results", data)
 						console.log(accordBody[index])
 					  accordBody[index].innerHTML = data.lyrics
 					  i++
