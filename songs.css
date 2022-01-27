@@ -3,7 +3,7 @@
 }
 
 .card {
-    margin: 30px;
+    /* margin: 30px; */
     border-radius: 20px;
     box-shadow: 2px 4px darkgrey;
 }
@@ -25,14 +25,14 @@
 .songH1 {
     font-weight: 500;
     text-shadow: 4px 4px #000000;
-
+    margin-top: 80px;
 }
 
 
 #music-container.col-md-4 {
     display: grid;
-    /* gap: 3px;
-    align-items: center; */
+    /* gap: 3px; */
+    /* align-items: center;  */
     justify-items: center;
     
     }
@@ -55,14 +55,18 @@ margin-left: auto;
     padding: auto;
     margin: auto;    
 }
+
 .card {
 width: 250px;
 box-shadow: 0 4px 8px 0 rgba(169, 12, 201, 0.288), 0 6px 20px 0 rgba(169, 12, 201, 0.288);
 text-align: center;
-
+margin-top: 20px;
 }
 
 .accordion-item {
     padding: 0 18px;
     background-color: transparent;
   }
+
+  
+  

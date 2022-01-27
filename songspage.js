@@ -21,8 +21,8 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 		songData.map((song, index) => {
 
 			//here we created a songCard that will be populated by the song that is fetched by the fetchSongs function. Each card has an "accordion" style for the lyrics to drop from. this styling was pulled in from Bootstrap...
-			  let songCard = `<div id="music-container" class="music-container">
-	<div class="card deezerApi"  style="width: 18rem;">
+			  let songCard = `<div class="music-container col-md-4">
+	<div class="card deezerApi" style="width: 18rem;">
 	  <img class="card-img-top" src="${song.album.cover_medium}" alt="Card image cap">
 	  <div class="card-body">
 	<div id="songTitle">${song.title}</div>
