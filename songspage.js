@@ -32,7 +32,8 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 		let i = 0;
 		if(i < 26) {
 			i++;
-		let songCard = `<div id="music-container" class="music-container">
+			// class="music-container"
+		let songCard = `<div id="music-container" class="col-md-4"> 
       <div class="card deezerApi"  style="width: 18rem;">
 		<img class="card-img-top" src="${song.album.cover_medium}" alt="Card image cap">
 		<div class="card-body">
