@@ -1,3 +1,8 @@
+body {
+    margin: auto;
+    padding: auto;
+
+}
 .jumbotron{
     margin:0px 0px 0px 0px;
       background: 
@@ -15,16 +20,26 @@
   .display-2 {
     font-size: 50px;
     font-weight: bolder;
+    text-shadow: 4px 4px black;
+
     
 }
 
+.row {
+    margin: auto;
+    padding: auto;
+}
+.team {
+    margin: auto;
+    
+}
 h4 {
     margin: 20px;
     padding: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.26);
-    width: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    width: 100%;
     text-align: center;
-    background-color: rgba(163, 153, 153, 0.164);
+    background-color: rgba(0, 0, 255, 0.377);
    
 }
 
@@ -33,40 +48,35 @@ h4 {
 }
 
 .container p {
-    text-align: center;
-    
+    text-align:center;
+    color: black;  
 }
+
 .gallery {
     background-color: rgba(235, 238, 230, 0.39);
+
 }
-
-/* body {
-    background-image: url("./image/head02.png");
-    background-position: right bottom;
-    background-size: 500px 420px;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-} */
-
     
 .chris {
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.589);
+    border: 4px solid rgba(19, 40, 238, 0.589);
     float:left;
     margin: 10px;
     
 }
 
+
+
 .moises {
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.589);
+    border: 4px solid rgba(19, 40, 238, 0.589);
     float:left;
     margin: 10px;
 }
  
 .shayma {
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.589);
+    border: 4px solid rgba(19, 40, 238, 0.589);
     float:left;
     margin: 10px;
 
@@ -74,20 +84,21 @@ h4 {
 
 .jeff {
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.589);
+    border: 4px solid rgba(19, 40, 238, 0.589);
     float:left;
     margin: 10px;
 
 }
 
-h3 {
+ h3 {
     color: black;
+    text-align: center;
 }
 
-p{
+p {
     color: black;
+    text-align: center;
 }
-
 
 footer {
     text-align: center;
@@ -97,5 +108,3 @@ footer {
   .footer p {
       color: white;
   }
-
-
