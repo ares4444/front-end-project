@@ -1,19 +1,13 @@
-import { songsKey } from "./keys.js";
-// import { fetchData } from "./fetchData.js";
+//importing key from different file to hide it from GitHub...
+import { songsKey } from "./keys.js"; 
 const results = document.getElementById("results");
-// const lyricsDIV = document.getElementById("lyricsDIV");
-const artistName = document.getElementById("artistName");
-const songName = document.getElementById("songName");
-let index = 0;
+
+//.getItem retrivies an item that was saved into loval storage. this is how we got the value inside the search bar to be presented in the SongsPage...
 const musicSearch = JSON.parse(localStorage.getItem("musicSearch"));
-//console.log(musicSearch);
-////console.log(musicSearch.artist);
-console.log(musicSearch.song);
-let counter = 0
+let index = 0;
 
+//(window.addEventListener) is interchangeable with (document.addEventListener)...
 window.addEventListener('DOMContentLoaded', async (event) => {
-
-	//promise1 = 
 	const fetchSongs = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${musicSearch.artist}`, {
 		method: "GET",
 		headers: {
@@ -21,13 +15,12 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 		  "x-rapidapi-key": `${songsKey}`,
 			},
 		  }).then((response) => response.json())
-		//   .then(songData => {
-		// 	  return songData
-		// 	})
-		  console.log("fetchSongs", fetchSongs.data)
+	
+		console.log("fetchSongs", fetchSongs.data)
 		const songData = fetchSongs.data
-
 		songData.map((song, index) => {
+
+			//here we created a songCard that will be populated by the song that is fetched by the fetchSongs function. Each card has an "accordion" style for the lyrics to drop from. this styling was pulled in from Bootstrap...
 			  let songCard = `<div id="music-container" class="music-container">
 	<div class="card deezerApi"  style="width: 18rem;">
 	  <img class="card-img-top" src="${song.album.cover_medium}" alt="Card image cap">
@@ -50,57 +43,21 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 	</div>
 	  </div>
 	  </div>`;
-	  //console.log(songCard);
 	  results.innerHTML += songCard;
 		});
 
-		console.log("songData", songData);
-
+		//here we are mapping through the data that was received from the songsFetch and having the function of lyricsFetch look for the same artist and corresponding song...
 	const lyricFetch = songData.map(async (song, index) => {
-		console.log("artist", song.artist.name);
-		console.log("title", song.title);
 		await fetch(`https://private-amnesiac-3503f-lyricsovh.apiary-proxy.com/v1/${song.artist.name}/${song.title}`)
 	.then(response => response.json())	
-
 	.then(lyrics => {
 	const accordBody = document.getElementById(`accordBody${index}`)
 	console.log(lyrics);
-	accordBody.innerHTML = lyrics.lyrics;
+
+	//The (.replace) method is used here to separate the lyrics in a cohesive manner. "\n" looks for each line break within the lyrics and gives it a <br> between. "g" was used to make the method global for the entirety of the lyrics for the song...
+	accordBody.innerHTML = lyrics.lyrics.replace(new RegExp("\n", "g"), "<br>");
 	})
 	});
-	// setTimeout(() => {
-	// 	const payload = lyricFetch;
-	// console.log(payload)}, 3000);
-	
-
-	
-// 	  //console.log(song);
-
-// 			  console.log(results.innerHTML)
-			  
-// 			  console.dir(accordBody);
-// 			  console.log(`accordBody["${index}"]`)
-			  
-// 			  })	
-
-			//${ songLyrics.data != “” ? PRINT THE LYRICS : “Lyrics not found”}
-		
-
-	
-
-	
-	
-	//promise.all = 
-
-	// Promise.all([fetchSongs]).then((values) => {
-	// 	console.log("promise.all", values);
-	//   });
-
-		console.log("this is the songs fetch",fetchSongs);
-		// console.log("this is the lyrics fetch",lyricFetch);
-
-
-	
 });
   
 
