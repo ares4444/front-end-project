@@ -31,8 +31,8 @@
 
 #music-container.col-md-4 {
     display: grid;
-    /* gap: 3px; */
-    /* align-items: center; */
+    /* gap: 3px;
+    align-items: center; */
     justify-items: center;
     
     }
