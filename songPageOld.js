@@ -1,9 +1,6 @@
 import { songsKey } from "./keys.js";
 // import { fetchData } from "./fetchData.js";
 const results = document.getElementById("results");
-const lyricsDIV = document.getElementById("lyricsDIV");
-const artistName = document.getElementById("artistName");
-const songName = document.getElementById("songName");
 
 const musicSearch = JSON.parse(localStorage.getItem("musicSearch"));
 console.log(musicSearch);
@@ -31,7 +28,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 	let i = 0;
     data.map((song) => {
 		console.log(i)	
-		let songCard = `<div id="music-container" class="music-container">
+		let songCard = `<div class="music-container col-md-4">
       <div class="card deezerApi"  style="width: 18rem;">
 		<img class="card-img-top" src="${song.album.cover_medium}" alt="Card image cap">
 		<div class="card-body">
@@ -41,12 +38,12 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     </div>
 	<div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button id="accordionBtn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+    <h2 class="accordion-header" id="flush-heading${index}">
+      <button id="accordionBtn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${index}" aria-expanded="false" aria-controls="flush-collapse${index}">
         Lyrics
       </button>
     </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="flush-heading${index}" data-bs-parent="#accordionFlushExample">
       <div id="accordBody${i}" class="accordion-body"></div>
     </div>
   </div>

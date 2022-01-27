@@ -29,12 +29,10 @@
 }
 
 
-#music-container.col-md-4 {
+.music-container.col-md-4 {
     display: grid;
-    /* gap: 3px; */
-    /* align-items: center;  */
     justify-items: center;
-    
+    align-items: center;
     }
 
 
