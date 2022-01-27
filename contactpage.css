@@ -8,6 +8,12 @@ body{
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
+
+h1 {
+  text-align: center;
+  text-shadow: 4px 4px black;
+}
+
 section{
     float:left;
     width:100%;
