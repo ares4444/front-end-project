@@ -394,3 +394,7 @@ h1 a{color:#131313; font-weight:bold;}
   .footer p {
       color: white;
   }
+
+  #contact-header {
+    margin-top: 60px;
+  }

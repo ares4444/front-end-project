@@ -177,3 +177,7 @@ img:hover {
   .footer p {
       color: white;
   }
+
+  #welcome-header {
+      margin-top: 20px;
+  }
